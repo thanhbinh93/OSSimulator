@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1500035022 source:c:\users\ntc\desktop\project_training\ossimulator\ossimulator\argumentexception.cpp
+	"ArgumentException.h"
+
+1500035168 c:\users\ntc\desktop\project_training\ossimulator\ossimulator\argumentexception.h
+	<string>
+	<exception>
+
+1500195905 source:c:\users\ntc\desktop\project_training\ossimulator\ossimulator\cpu.cpp
+	"CPU.h"
+
+1500195688 c:\users\ntc\desktop\project_training\ossimulator\ossimulator\cpu.h
+	<stdlib.h>
+	"Memory.h"
+
+1500051285 c:\users\ntc\desktop\project_training\ossimulator\ossimulator\memory.h
+
+1500038646 c:\users\ntc\desktop\project_training\ossimulator\ossimulator\instructionset.h
+
+1500028552 source:c:\users\ntc\desktop\project_training\ossimulator\ossimulator\errormessage.cpp
+	"ErrorMessage.h"
+
+1500028786 c:\users\ntc\desktop\project_training\ossimulator\ossimulator\errormessage.h
+
+1500049054 source:c:\users\ntc\desktop\project_training\ossimulator\ossimulator\main.cpp
+	<iostream>
+	<cstdio>
+	<stdlib.h>
+	"ArgumentException.h"
+
+1500106816 source:c:\users\ntc\desktop\project_training\ossimulator\ossimulator\memory.cpp
+	"Memory.h"
+
+1500028454 source:c:\users\ntc\desktop\project_training\ossimulator\ossimulator\ossimulator.cpp
+	"OSSimulator.h"
+
+1500028454 c:\users\ntc\desktop\project_training\ossimulator\ossimulator\ossimulator.h
+
+1500028228 source:c:\users\ntc\desktop\project_training\ossimulator\ossimulator\timer.cpp
+	"Timer.h"
+
+1500051139 c:\users\ntc\desktop\project_training\ossimulator\ossimulator\timer.h
+
