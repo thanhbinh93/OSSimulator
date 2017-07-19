@@ -3,7 +3,8 @@
 
 #include <stdlib.h>
 #include "Memory.h"
-//#include "InstructionSet.h"
+#include "Instruction.h"
+#include "Timer.h"
 
 /**
  * Control unit system class
@@ -29,7 +30,7 @@ class CPU
          * Initial CPU
          *
          */
-        CPU(Memory memory);
+        CPU(Memory memory, int tickTime);
 
         /**
          * 1. Initial registers
@@ -105,6 +106,12 @@ class CPU
          Memory memory;
 
          /**
+         * Instruction and Data memory
+         *
+         */
+         Timer timer;
+
+         /**
          * initial value for registers
          *
          */
@@ -121,7 +128,7 @@ class CPU
          * Execute instruction
          *
          */
-         //void execute(InstructionSet instructionSet);
+         void executeInstruction(InstructionSet insSet);
 
          /**
          * Execute Load Value instruction
@@ -387,7 +394,17 @@ class CPU
          * @param addr
          * @param data
          */
-         //Instruction decodeInstruction();
+         InstructionSet decodeInstruction();
+
+         /**
+         * write to system stack memory
+         * @param addr
+         * @param data
+         */
+         InstructionSet detectIntructionSet();
+
+         bool isNeedRestoreRegister(int addr);
+
 
 };
 

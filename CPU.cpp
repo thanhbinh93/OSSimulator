@@ -1,4 +1,15 @@
+#include <iostream>
+#include <ctime>
+
 #include "CPU.h"
+#include "IllegalAccessMemoryException.h"
+#include "IndexOutOfRangeException.h"
+#include "NotSupportedInstructionException.h"
+#include "Instruction.h"
+#include "InstructionSet.h"
+
+
+using namespace std;
 
 CPU::CPU()
 {
@@ -10,9 +21,13 @@ CPU::~CPU()
     //dtor
 }
 
-CPU::CPU(Memory memory)
+CPU::CPU(Memory memory, int tickTime)
 {
     this->memory = memory;
+    // initial timer with tick time
+    //tickTime = 30;
+    this->timer.setTickTime(tickTime);
+    this->timer.reset();
     // set end flag to flase
     isEndProgram = false;
 }
@@ -23,26 +38,133 @@ void CPU::start()
     // reset system state
     CPUState = USER_MODE;
 
-    while(isEndProgram == false)
+    while(!isEndProgram)
     {
         this->fetchInstruction();
-        //this->decodeInstruction();
-        //executeInstruction(instruction);
+        InstructionSet instructionSet  = this->decodeInstruction();
+        executeInstruction(instructionSet);
+
+        // Processing timer interrupt
+        timer.updateTimer();
+        if(timer.isHandlerTimerInterrupt()){
+            processingTimerInterrupt();
+            // reset counter
+            timer.reset();
+        }
+    }
+}
+
+void CPU::executeInstruction(InstructionSet insSet)
+{
+    Instruction insInfo;
+
+    switch(insSet.optCode)
+    {
+        case LOAD_VALUE:
+            loadValue(insSet.operands[0]);
+            break;
+        case LOAD_ADDR:
+            loadAddress(insSet.operands[0]);
+            break;
+        case LOAD_IND_ADDR:
+            loadIndAddr(insSet.operands[0]);
+            break;
+        case LOAD_IDX_X_ADDR:
+            loadIdxXAddr(insSet.operands[0]);
+            break;
+        case LOAD_IDX_Y_ADDR:
+            loadIdxYAddr(insSet.operands[0]);
+            break;
+        case LOAD_SPX:
+            loadSpx();
+            break;
+        case STORE_ADDR:
+            storeAddr(insSet.operands[0]);
+            break;
+        case GET:
+            get();
+            break;
+        case PUT_PORT:
+            putPort(insSet.operands[0]);
+            break;
+        case ADD_X:
+            addX();
+            break;
+        case ADD_Y:
+            addY();
+            break;
+        case SUB_X:
+            subX();
+            break;
+        case SUB_Y:
+            subY();
+            break;
+        case COPY_TO_X:
+            copyToX();
+            break;
+        case COPY_FROM_X:
+            copyFromX();
+            break;
+        case COPY_TO_Y:
+            copyToY();
+            break;
+        case COPY_FROM_Y:
+            copyFromY();
+            break;
+        case COPY_TO_SP:
+            copyToSp();
+            break;
+        case COPY_FROM_SP:
+            copyFromSp();
+            break;
+        case JUMP_ADDR:
+            jumpAddr(insSet.operands[0]);
+            break;
+        case JUMP_IF_EQUAL:
+            jumpIfEqual(insSet.operands[0]);
+            break;
+        case JUMP_IF_NOT_EQUAL:
+            jumpIfNotEqual(insSet.operands[0]);
+            break;
+        case CALL_ADDR:
+            callAddr(insSet.operands[0]);
+            break;
+        case RET:
+            ret();
+            break;
+        case INCX:
+            incX();
+            break;
+        case DECX:
+            decX();
+            break;
+        case PUSH:
+            executePush();
+            break;
+        case POP:
+            executePop();
+            break;
+        case INT:
+            executeInt();
+            break;
+        case IRET:
+            executeIret();
+            break;
+        case END:
+            executeEnd();
+            break;
+        default:
+            throw NotSupportedInstructionException();
     }
 
 }
-
-//void CPU::executeIntruction(InstructionSet instructionSet)
-//{
-//
-//}
 
 void CPU::initFileRegisters()
 {
     this->PC = 0;
     this->AC = 0;
-    this->X = 0;
-    this->Y = 0;
+    this->X  = 0;
+    this->Y  = 0;
     this->SP = 2000;
 }
 
@@ -50,9 +172,56 @@ void CPU::fetchInstruction()
 {
     // read next instruction in memory at the address in PC
     // store the instrucion in IR
-    this->IR  = this->readMemory(this->PC);
+    this->IR = this->readMemory(this->PC);
     // increase PC
     this->PC++;
+}
+
+InstructionSet CPU::detectIntructionSet()
+{
+    Instruction instructionInfo;
+    InstructionSet instructSet;
+    bool isDetect = true;
+    int i = 0;
+    int len =  sizeof(instructionInfo.instructions) / sizeof (instructionInfo.instructions[0]);
+    while (isDetect && i < len) {
+
+        int tempCode = instructionInfo.instructions[i].optCode;
+
+        if(tempCode == this->IR)
+        {
+            instructSet = instructionInfo.instructions[i];
+            isDetect = false;
+        }
+
+        i++;
+    }
+
+    // Not supported instruction
+    if (instructSet.optCode <= 0)
+    {
+        throw NotSupportedInstructionException();
+    }
+    else
+    {
+        return instructSet;
+    }
+
+}
+
+InstructionSet CPU::decodeInstruction()
+{
+    InstructionSet instruction;
+    instruction = this->detectIntructionSet();
+
+    // Decode instruction
+    for(int i = 0; i < instruction.numOfOperand; i++){
+        int operand = this->readMemory(this->PC);
+        this->PC++;
+        instruction.operands[i] = operand;
+    }
+
+    return instruction;
 }
 
 void CPU::loadValue(int value)
@@ -97,8 +266,16 @@ void CPU::loadSpx()
 
 void CPU::storeAddr(int addr)
 {
-    // write value of AC to addr
-    this->writeMemory(addr, this->AC);
+    if (addr < 0 || addr > SIZE_OF_MEMORY)
+    {
+        throw IndexOutOfRangeException();
+    }
+    else
+    {
+        // write value of AC to addr
+        this->writeMemory(addr, this->AC);
+    }
+
 }
 
 void CPU::get()
@@ -107,11 +284,19 @@ void CPU::get()
     int low = 1;
     int high = 100;
     this->AC = rand() % high + low;
+    srand(time(NULL));
 }
 
 void CPU::putPort(int portId)
 {
-
+     if (portId ==1)
+        {
+            cout << this->AC << endl;
+        }
+        else if (portId == 2)
+        {
+            cout << (char)this->AC << endl;
+        }
 }
 
 void CPU::addX()
@@ -211,8 +396,10 @@ void CPU::decX()
 
 void CPU::executePush()
 {
+
     // write AC to memory at address in SP
     this->writeSystemStackMemory(this->SP, this->AC);
+
     this->SP--;
 }
 
@@ -252,6 +439,8 @@ int CPU::readMemory(int addr)
 
 void CPU::writeMemory(int addr, int data)
 {
+    if(addr <0 ) throw IndexOutOfRangeException();
+    if(addr >= SYSTEM_PROGRAM_ADDRESS) throw IllegalAccessMemoryException();
     this->memory.write(addr, data);
 }
 
@@ -260,10 +449,30 @@ void CPU::processingTimerInterrupt()
     if (this->CPUState != SYSTEM_MODE) {
         // push system state
         this->pushRegistersIntoSystemStack();
+
         // update PC = TIMER_PROCESS_ADDRESS
         this->PC = TIMER_PROCESS_ADDRESS;
+
+        if(this->isNeedRestoreRegister(this->PC)){
+            this->popFromSystemStackIntoRegisters();
+        }
         this->CPUState = SYSTEM_MODE;
     }
+}
+
+bool CPU::isNeedRestoreRegister(int addr)
+{
+    Instruction instructionInfo;
+
+    int value = this->readMemory(addr);
+
+    bool isValidCode = false;
+    for (int i = 0; i < NUMBER_OF_INSTRUCTION; i++)
+    {
+        isValidCode = instructionInfo.instructions[i].optCode == value;
+    }
+
+    return !isValidCode;
 }
 
 void CPU::processingProgramInterrupt()
@@ -271,8 +480,10 @@ void CPU::processingProgramInterrupt()
     if (this->CPUState != SYSTEM_MODE) {
         // push system state
         this->pushRegistersIntoSystemStack();
+
         // update PC = TIMER_PROCESS_ADDRESS
         this->PC = INTERUPT_PROCESS_ADDRESS;
+
         this->CPUState = SYSTEM_MODE;
     }
 }
@@ -280,17 +491,23 @@ void CPU::processingProgramInterrupt()
 void CPU::pushRegistersIntoSystemStack()
 {
     // Switch system stack
+
     // write PC to memory at the address of SP in system memory stack
-    // write SP to memory at the address of SP - 1 in system memory stack
-    // write AC to memory at the address of SP - 2 in system memory stack
-    // write X to memory at the address of SP - 3 in system memory stack
-    // write Y to memory at the address of SP - 4 in system memory stack
-    // SP = SP - 5
     writeSystemStackMemory(this->SP, PC);
+
+    // write SP to memory at the address of SP - 1 in system memory stack
     writeSystemStackMemory(this->SP - 1, SP);
+
+    // write AC to memory at the address of SP - 2 in system memory stack
     writeSystemStackMemory(this->SP - 2, AC);
+
+    // write X to memory at the address of SP - 3 in system memory stack
     writeSystemStackMemory(this->SP - 3, X);
+
+    // write Y to memory at the address of SP - 4 in system memory stack
     writeSystemStackMemory(this->SP - 4, Y);
+
+
     this->SP = this->SP - 5;
 }
 
@@ -321,5 +538,6 @@ void CPU::restoreRegisters()
 
 void CPU::writeSystemStackMemory(int addr, int data)
 {
+    if(addr < SYSTEM_PROGRAM_ADDRESS) throw IllegalAccessMemoryException();
     this->memory.write(addr, data);
 }

@@ -1,0 +1,427 @@
+# depslib dependency file v1.0
+1446667744 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\main.cpp
+	<iostream>
+
+1500035022 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\argumentexception.cpp
+	"ArgumentException.h"
+
+1500035168 c:\users\ntc\desktop\project_training\1707\ossimulator_\argumentexception.h
+	<string>
+	<exception>
+
+1500307759 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\cpu.cpp
+	"CPU.h"
+	"IllegalAccessMemoryException.h"
+	"IndexOutOfRangeException.h"
+	"Instruction.h"
+	"InstructionSet.h"
+
+1500309943 c:\users\ntc\desktop\project_training\1707\ossimulator_\cpu.h
+	<stdlib.h>
+	"Memory.h"
+	"Instruction.h"
+
+1500292178 c:\users\ntc\desktop\project_training\1707\ossimulator_\memory.h
+	<string>
+
+1500197348 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\illegalaccessmemoryexception.cpp
+	"IllegalAccessMemoryException.h"
+
+1500197278 c:\users\ntc\desktop\project_training\1707\ossimulator_\illegalaccessmemoryexception.h
+	<string>
+	<exception>
+
+1500295786 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\lineinstruction.cpp
+	"LineInstruction.h"
+	<tgmath.h>
+	<iostream>
+
+1500294684 c:\users\ntc\desktop\project_training\1707\ossimulator_\lineinstruction.h
+	<string>
+
+1500295854 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\memory.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"Memory.h"
+	"IndexOutOfRangeException.h"
+	"LineInstruction.h"
+
+1500293136 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\operatingsystem.cpp
+	"OperatingSystem.h"
+	"CPU.h"
+	"Memory.h"
+
+1500293176 c:\users\ntc\desktop\project_training\1707\ossimulator_\operatingsystem.h
+	"CPU.h"
+	"Memory.h"
+
+1500028454 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\ossimulator.cpp
+	"OSSimulator.h"
+
+1500292512 c:\users\ntc\desktop\project_training\1707\ossimulator_\ossimulator.h
+
+1500028228 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\timer.cpp
+	"Timer.h"
+
+1500051138 c:\users\ntc\desktop\project_training\1707\ossimulator_\timer.h
+
+1500197708 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\indexoutofrangeexception.cpp
+	"IndexOutOfRangeException.h"
+
+1500197638 c:\users\ntc\desktop\project_training\1707\ossimulator_\indexoutofrangeexception.h
+	<string>
+	<exception>
+
+1500284922 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\instruction.cpp
+	"Instruction.h"
+
+1500285446 c:\users\ntc\desktop\project_training\1707\ossimulator_\instruction.h
+	"InstructionSet.h"
+	<list>
+
+1500307806 c:\users\ntc\desktop\project_training\1707\ossimulator_\instructionset.h
+
+1500284534 source:c:\users\ntc\desktop\project_training\1707\ossimulator_\instructionset.cpp
+	"InstructionSet.h"
+
+1500035022 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\argumentexception.cpp
+	"ArgumentException.h"
+
+1500347840 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\argumentexception.h
+	<string>
+	<exception>
+
+1500362075 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\cpu.cpp
+	<iostream>
+	"CPU.h"
+	"IllegalAccessMemoryException.h"
+	"IndexOutOfRangeException.h"
+	"NotSupportedInstructionException.h"
+	"Instruction.h"
+	"InstructionSet.h"
+
+1500349226 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\cpu.h
+	<stdlib.h>
+	"Memory.h"
+	"Instruction.h"
+
+1500353515 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\memory.h
+	<string>
+
+1500349192 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\instruction.h
+	"InstructionSet.h"
+	<list>
+
+1500348068 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\instructionset.h
+
+1500197278 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\illegalaccessmemoryexception.h
+	<string>
+	<exception>
+
+1500197638 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\indexoutofrangeexception.h
+	<string>
+	<exception>
+
+1500347896 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\notsupportedinstructionexception.h
+	<string>
+	<exception>
+
+1500197348 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\illegalaccessmemoryexception.cpp
+	"IllegalAccessMemoryException.h"
+
+1500349997 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\indexoutofrangeexception.cpp
+	"IndexOutOfRangeException.h"
+
+1500284922 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\instruction.cpp
+	"Instruction.h"
+
+1500345228 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\instructionset.cpp
+	"InstructionSet.h"
+
+1500363358 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\lineinstruction.cpp
+	"LineInstruction.h"
+	<tgmath.h>
+	<stdio.h>
+	<iostream>
+	<cctype>
+
+1500363158 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\lineinstruction.h
+	<string>
+
+1500358578 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\main.cpp
+	<cstdio>
+	<stdlib.h>
+	"OSSimulator.h"
+
+1500347456 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\notsupportedinstructionexception.cpp
+	"NotSupportedInstructionException.h"
+
+1500360421 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\operatingsystem.cpp
+	"OperatingSystem.h"
+	"CPU.h"
+	"Memory.h"
+
+1500360364 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\operatingsystem.h
+	"CPU.h"
+	"Memory.h"
+
+1500361481 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\ossimulator.cpp
+	<iostream>
+	<cstdio>
+	<stdlib.h>
+	"ArgumentException.h"
+	"OperatingSystem.h"
+	"IndexOutOfRangeException.h"
+	"NotSupportedInstructionException.h"
+	"OSSimulator.h"
+	"IllegalAccessMemoryException.h"
+
+1500358484 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\ossimulator.h
+
+1500028228 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\timer.cpp
+	"Timer.h"
+
+1500051138 c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\timer.h
+
+1500362988 source:c:\users\giangntp.toshiba-tsdv\desktop\ossimulator_\memory.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<algorithm>
+	<cctype>
+	"Memory.h"
+	"IndexOutOfRangeException.h"
+	"LineInstruction.h"
+
+1500035022 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\argumentexception.cpp
+	"ArgumentException.h"
+
+1500347840 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\argumentexception.h
+	<string>
+	<exception>
+
+1500367628 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\cpu.cpp
+	<iostream>
+	"CPU.h"
+	"IllegalAccessMemoryException.h"
+	"IndexOutOfRangeException.h"
+	"NotSupportedInstructionException.h"
+	"Instruction.h"
+	"InstructionSet.h"
+
+1500367664 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\cpu.h
+	<stdlib.h>
+	"Memory.h"
+	"Instruction.h"
+	"Timer.h"
+
+1500368943 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\memory.h
+	<string>
+
+1500349192 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\instruction.h
+	"InstructionSet.h"
+	<list>
+
+1500348068 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\instructionset.h
+
+1500197278 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\illegalaccessmemoryexception.h
+	<string>
+	<exception>
+
+1500197638 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\indexoutofrangeexception.h
+	<string>
+	<exception>
+
+1500347896 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\notsupportedinstructionexception.h
+	<string>
+	<exception>
+
+1500197348 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\illegalaccessmemoryexception.cpp
+	"IllegalAccessMemoryException.h"
+
+1500349997 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\indexoutofrangeexception.cpp
+	"IndexOutOfRangeException.h"
+
+1500284922 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\instruction.cpp
+	"Instruction.h"
+
+1500345228 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\instructionset.cpp
+	"InstructionSet.h"
+
+1500363358 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\lineinstruction.cpp
+	"LineInstruction.h"
+	<tgmath.h>
+	<stdio.h>
+	<iostream>
+	<cctype>
+
+1500363158 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\lineinstruction.h
+	<string>
+
+1500358578 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\main.cpp
+	<cstdio>
+	<stdlib.h>
+	"OSSimulator.h"
+
+1500370338 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\ossimulator.h
+	<iostream>
+	<cstdio>
+	<stdlib.h>
+	<cstring>
+
+1500369270 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\memory.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<algorithm>
+	<cctype>
+	"Memory.h"
+	"IndexOutOfRangeException.h"
+	"LineInstruction.h"
+
+1500347456 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\notsupportedinstructionexception.cpp
+	"NotSupportedInstructionException.h"
+
+1500367750 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\operatingsystem.cpp
+	"OperatingSystem.h"
+	"CPU.h"
+	"Memory.h"
+
+1500367569 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\operatingsystem.h
+	"CPU.h"
+	"Memory.h"
+
+1500370604 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\ossimulator.cpp
+	<iostream>
+	<cstdio>
+	<stdlib.h>
+	<cstring>
+	"ArgumentException.h"
+	"OperatingSystem.h"
+	"IndexOutOfRangeException.h"
+	"NotSupportedInstructionException.h"
+	"OSSimulator.h"
+	"IllegalAccessMemoryException.h"
+
+1500366703 source:c:\users\luandn\desktop\trainning_7_2017\ossimulator_\timer.cpp
+	"Timer.h"
+
+1500366672 c:\users\luandn\desktop\trainning_7_2017\ossimulator_\timer.h
+
+1500035022 source:e:\ossimulator_\ossimulator_\argumentexception.cpp
+	"ArgumentException.h"
+
+1500347840 e:\ossimulator_\ossimulator_\argumentexception.h
+	<string>
+	<exception>
+
+1500197348 source:e:\ossimulator_\ossimulator_\illegalaccessmemoryexception.cpp
+	"IllegalAccessMemoryException.h"
+
+1500197278 e:\ossimulator_\ossimulator_\illegalaccessmemoryexception.h
+	<string>
+	<exception>
+
+1500349997 source:e:\ossimulator_\ossimulator_\indexoutofrangeexception.cpp
+	"IndexOutOfRangeException.h"
+
+1500197638 e:\ossimulator_\ossimulator_\indexoutofrangeexception.h
+	<string>
+	<exception>
+
+1500284922 source:e:\ossimulator_\ossimulator_\instruction.cpp
+	"Instruction.h"
+
+1500380261 e:\ossimulator_\ossimulator_\instruction.h
+	"InstructionSet.h"
+	<list>
+
+1500348068 e:\ossimulator_\ossimulator_\instructionset.h
+
+1500345228 source:e:\ossimulator_\ossimulator_\instructionset.cpp
+	"InstructionSet.h"
+
+1500363358 source:e:\ossimulator_\ossimulator_\lineinstruction.cpp
+	"LineInstruction.h"
+	<tgmath.h>
+	<stdio.h>
+	<iostream>
+	<cctype>
+
+1500363158 e:\ossimulator_\ossimulator_\lineinstruction.h
+	<string>
+
+1500358578 source:e:\ossimulator_\ossimulator_\main.cpp
+	<cstdio>
+	<stdlib.h>
+	"OSSimulator.h"
+
+1500370338 e:\ossimulator_\ossimulator_\ossimulator.h
+	<iostream>
+	<cstdio>
+	<stdlib.h>
+	<cstring>
+
+1500347456 source:e:\ossimulator_\ossimulator_\notsupportedinstructionexception.cpp
+	"NotSupportedInstructionException.h"
+
+1500347896 e:\ossimulator_\ossimulator_\notsupportedinstructionexception.h
+	<string>
+	<exception>
+
+1500377805 source:e:\ossimulator_\ossimulator_\memory.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<algorithm>
+	<cctype>
+	"Memory.h"
+	"IndexOutOfRangeException.h"
+	"LineInstruction.h"
+
+1500368943 e:\ossimulator_\ossimulator_\memory.h
+	<string>
+
+1500367750 source:e:\ossimulator_\ossimulator_\operatingsystem.cpp
+	"OperatingSystem.h"
+	"CPU.h"
+	"Memory.h"
+
+1500367569 e:\ossimulator_\ossimulator_\operatingsystem.h
+	"CPU.h"
+	"Memory.h"
+
+1500379849 e:\ossimulator_\ossimulator_\cpu.h
+	<stdlib.h>
+	"Memory.h"
+	"Instruction.h"
+	"Timer.h"
+
+1500366672 e:\ossimulator_\ossimulator_\timer.h
+
+1500380930 source:e:\ossimulator_\ossimulator_\ossimulator.cpp
+	<iostream>
+	<cstdio>
+	<stdlib.h>
+	<cstring>
+	"ArgumentException.h"
+	"OperatingSystem.h"
+	"IndexOutOfRangeException.h"
+	"NotSupportedInstructionException.h"
+	"OSSimulator.h"
+	"IllegalAccessMemoryException.h"
+
+1500366703 source:e:\ossimulator_\ossimulator_\timer.cpp
+	"Timer.h"
+
+1500380986 source:e:\ossimulator_\ossimulator_\cpu.cpp
+	<iostream>
+	<ctime>
+	"CPU.h"
+	"IllegalAccessMemoryException.h"
+	"IndexOutOfRangeException.h"
+	"NotSupportedInstructionException.h"
+	"Instruction.h"
+	"InstructionSet.h"
+

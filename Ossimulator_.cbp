@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Ossimulator_" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Ossimulator_" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="../Ossimulator_" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Ossimulator_" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="../Ossimulator_" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="ArgumentException.cpp" />
+		<Unit filename="ArgumentException.h" />
+		<Unit filename="CPU.cpp" />
+		<Unit filename="CPU.h" />
+		<Unit filename="IllegalAccessMemoryException.cpp" />
+		<Unit filename="IllegalAccessMemoryException.h" />
+		<Unit filename="IndexOutOfRangeException.cpp" />
+		<Unit filename="IndexOutOfRangeException.h" />
+		<Unit filename="Instruction.cpp" />
+		<Unit filename="Instruction.h" />
+		<Unit filename="InstructionSet.cpp" />
+		<Unit filename="InstructionSet.h" />
+		<Unit filename="LineInstruction.cpp" />
+		<Unit filename="LineInstruction.h" />
+		<Unit filename="Memory.cpp" />
+		<Unit filename="Memory.h" />
+		<Unit filename="NotSupportedInstructionException.cpp" />
+		<Unit filename="NotSupportedInstructionException.h" />
+		<Unit filename="OSSimulator.cpp" />
+		<Unit filename="OSSimulator.h" />
+		<Unit filename="OperatingSystem.cpp" />
+		<Unit filename="OperatingSystem.h" />
+		<Unit filename="Timer.cpp" />
+		<Unit filename="Timer.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
